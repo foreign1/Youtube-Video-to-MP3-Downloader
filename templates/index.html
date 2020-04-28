@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <!--Download box-->
+    <div class="card text-center">
+        <div class="card-header">
+          The #1 YouTube video to mp3 downloader
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Input YouTube Video Link</h5>
+          <form method="POST" action="/">
+            <div class="form-group">
+                {{ form.downloadlink (class_="form-control") }}
+                {{ form.submit (class_="btn btn-primary")}}
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-muted">
+          <div class="social-bar">
+              <!-- Facebook -->
+              <a href="#" class="social-icon">
+                  <img src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
+              </a>
+              <!-- Twitter -->
+              <a href="#" class="social-icon">
+                  <img src="https://img.icons8.com/color/48/000000/twitter.png"/>
+              </a>
+              <!-- Youtube -->
+              <a href="#" class="social-icon">
+                  <img src="https://img.icons8.com/color/48/000000/youtube-squared.png"/>
+              </a>
+              <!--  -->
+              <a href="#" class="social-icon">
+                  <img src="https://img.icons8.com/color/48/000000/gmail.png"/>
+              </a>
+              <!--  -->
+              <a href="#" class="social-icon">
+                  <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
+              </a>
+          </div>
+        </div>
+    </div>
+    <!--End download box-->
+{% endblock %}

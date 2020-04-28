@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content={{description}}>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% block css %}{% endblock %}
+  </head>
+
+  <body>
+      <div class="container-fluid">
+        {% include 'navigation.html' %}
+        <div class="section">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="article">
+            <div class="row"  style="text-align: center;">
+                <div class="col">
+                    <h3>How to save youtube videos</h3>
+                </div>
+            </div>
+            <div class="row  align-items-center instruction"  style="text-align: center;">
+                <div class="col-sm align-items-center align-self-center">
+                    <img src="https://img.icons8.com/metro/52/000000/video-call.png"/>
+                    <h2>1. Find The Video</h2>
+                    <p>Copy the Facebook video URL by right clicking the video and selecting "copy video url".</p>
+                </div>
+                <div class="col-sm align-items-center align-self-center">
+                    <img src="https://img.icons8.com/ios-filled/52/000000/copy-link.png"/>
+                    <h2>2. Paste The Link</h2>
+                    <p>Paste the YouTube link into the input field above and hit the download button</p>
+                </div>
+                <div class="col-sm align-self-center">
+                    <img src="https://img.icons8.com/metro/52/000000/download.png"/>
+                    <h2>3. Download The File</h2>
+                    <p>Click on the preferred format and give your file a name.</p>
+                </div>
+            </div>
+        </div> 
+      </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+
+</html>
