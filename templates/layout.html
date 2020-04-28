@@ -11,7 +11,9 @@
   </head>
 
   <body>
+    {% include 'navigation.html' %}
       <div class="container-fluid">
+          <!-- Import the nav bar into layout-->
         {% include 'navigation.html' %}
         <div class="section">
             {% block content %}{% endblock %}
