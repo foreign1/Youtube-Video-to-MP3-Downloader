@@ -10,13 +10,18 @@
           The #1 YouTube video to mp3 downloader
         </div>
         <div class="card-body">
-          <h5 class="card-title">Input YouTube Video Link</h5>
           <form method="POST" action="/">
+            {{ form.csrf_token}}
             <div class="form-group">
-                {{ form.csrf_token}}
+                <label for="exampleInputEmail1">Enter YouTube video link</label>
                 {{ form.downloadlink (class_="form-control") }}
-                {{ form.submit (class_="btn btn-primary")}}
             </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">File storage path in C:\</label>
+                {{ form.safeFileIn (class_="form-control safeFileIn") }}
+                <small id="emailHelp" class="form-text text-muted">Where should your file be saved?</small>
+            </div>
+            {{ form.submit (class_="btn btn-primary")}}
           </form>
         </div>
         <div class="card-footer text-muted">
