@@ -1,11 +1,13 @@
-import os, re
+import os
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import InputRequired
 from pytube import YouTube
 from moviepy.editor import * 
+import moviepy.editor
 from utilFunct import *
+import utilFunct
 #Initialize our app
 app = Flask(__name__, instance_relative_config=False, template_folder='templates')
 app.config.from_object('config.Config')
@@ -31,11 +33,11 @@ def home():
         print('Creating youtube object...')
         print('Verifying youtube video link...')
         # Create youtube object
-        yt = YouTube(f'https://youtu.be/sXJXLq1lN7U')
+        yt = YouTube(f'{downloadLink}')
         # Get video title
         title = yt.title
         # Normalize title
-        title = titleNormalizer(title)
+        title = utilFunct.titleNormalizer(title)
         # Get video with lowest resolution
         myVid = yt.streams.filter(res='360p').first()
         # Notify user of download commencement 
@@ -52,7 +54,7 @@ def home():
 
         # Convert downloaded video to audio file
         print("Converting your file, please wait a moment...")
-        video = VideoFileClip(os.path.join(safeFileIn, title + '.mp4'))
+        video = moviepy.editor.VideoFileClip(os.path.join(safeFileIn, title + '.mp4'))
         video.audio.write_audiofile(os.path.join(safeFileIn, title + '.mp3'))
 
         print(f'File converted. You may now access your file titled "{title}.mp3" in {safeFileIn}!')
